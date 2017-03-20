@@ -1,0 +1,219 @@
+[
+  {
+    "state": "TELANGANA",
+    "district": "Adilabad",
+    "taluk": "Luxettipet",
+    "place": "Andugulpet",
+    "pincode": "504231"
+  },
+  {
+    "state": "TELANGANA",
+    "district": "Adilabad",
+    "taluk": "Chennur",
+    "place": "Annaram",
+    "pincode": "504201"
+  },
+  {
+    "state": "TELANGANA",
+    "district": "Adilabad",
+    "taluk": "Adilabad",
+    "place": "Arli (T)",
+    "pincode": "504312"
+  },
+  {
+    "state": "TELANGANA",
+    "district": "Adilabad",
+    "taluk": "Asifabad",
+    "place": "Bambara",
+    "pincode": "504295"
+  },
+  {
+    "state": "TELANGANA",
+    "district": "Adilabad",
+    "taluk": "Nirmal",
+    "place": "Bangalpet",
+    "pincode": "504106"
+  },
+  {
+    "state": "TELANGANA",
+    "district": "Adilabad",
+    "taluk": "Nirmal",
+    "place": "Bansapalli",
+    "pincode": "504306"
+  },
+  {
+    "state": "TELANGANA",
+    "district": "Adilabad",
+    "taluk": "Sirpur (t)",
+    "place": "Bejjur",
+    "pincode": "504299"
+  },
+  {
+    "state": "TELANGANA",
+    "district": "Adilabad",
+    "taluk": "Khanapur",
+    "place": "Bellalbadi",
+    "pincode": "504202"
+  },
+  {
+    "state": "JHARKHAND",
+    "district": "Hazaribag",
+    "taluk": "Padma",
+    "place": "Jihu",
+    "pincode": "825411"
+  },
+  {
+    "state": "JHARKHAND",
+    "district": "Hazaribag",
+    "taluk": "Katkamsandi",
+    "place": "Kadma",
+    "pincode": "825302"
+  },
+  {
+    "state": "JHARKHAND",
+    "district": "Chatra",
+    "taluk": "Chatra",
+    "place": "Kanhachatti",
+    "pincode": "825401"
+  },
+  {
+    "state": "JHARKHAND",
+    "district": "Chatra",
+    "taluk": "Gidhaur",
+    "place": "Karni",
+    "pincode": "825408"
+  },
+  {
+    "state": "JHARKHAND",
+    "district": "Chatra",
+    "taluk": "Pratappur",
+    "place": "Kaura",
+    "pincode": "825404"
+  },
+  {
+    "state": "JHARKHAND",
+    "district": "Koderma",
+    "taluk": "Kodarma",
+    "place": "Kodarma",
+    "pincode": "825410"
+  },
+  {
+    "state": "JHARKHAND",
+    "district": "Hazaribag",
+    "taluk": "Katkamsandi",
+    "place": "Lilanagar",
+    "pincode": "825302"
+  },
+  {
+    "state": "JHARKHAND",
+    "district": "Hazaribag",
+    "taluk": "Sadar",
+    "place": "Maheshra",
+    "pincode": "825313"
+  },
+  {
+    "state": "JHARKHAND",
+    "district": "Koderma",
+    "taluk": "Kodarma",
+    "place": "Masnodih",
+    "pincode": "825407"
+  },
+  {
+    "state": "JHARKHAND",
+    "district": "Koderma",
+    "taluk": "Kodarma",
+    "place": "Murukmanai",
+    "pincode": "825418"
+  },
+  {
+    "state": "JHARKHAND",
+    "district": "Hazaribag",
+    "taluk": "Barkagaon",
+    "place": "Pandu",
+    "pincode": "825311"
+  },
+  {
+    "state": "JHARKHAND",
+    "district": "Chatra",
+    "taluk": "Simaria",
+    "place": "Piri",
+    "pincode": "825103"
+  },
+  {
+    "state": "UTTAR PRADESH",
+    "district": "Mahoba",
+    "taluk": "Hamirpur",
+    "place": "Bijaypur",
+    "pincode": "210429"
+  },
+  {
+    "state": "UTTAR PRADESH",
+    "district": "Hamirpur",
+    "taluk": "Hamirpur",
+    "place": "Bilgaon",
+    "pincode": "210432"
+  },
+  {
+    "state": "UTTAR PRADESH",
+    "district": "Mahoba",
+    "taluk": "NA",
+    "place": "Bilkhi",
+    "pincode": "210433"
+  },
+  {
+    "state": "UTTAR PRADESH",
+    "district": "Hamirpur",
+    "taluk": "Hamirpur",
+    "place": "Chhani Buzurg",
+    "pincode": "210501"
+  },
+  {
+    "state": "WEST BENGAL",
+    "district": "Bardhaman",
+    "taluk": "Barabani",
+    "place": "Kalajhoria",
+    "pincode": "713325"
+  },
+  {
+    "state": "WEST BENGAL",
+    "district": "Bardhaman",
+    "taluk": "Durgapur Mc",
+    "place": "Kamalpur",
+    "pincode": "713204"
+  },
+  {
+    "state": "WEST BENGAL",
+    "district": "Bardhaman",
+    "taluk": "Baraboni",
+    "place": "Kelejora",
+    "pincode": "713334"
+  },
+  {
+    "state": "WEST BENGAL",
+    "district": "Bardhaman",
+    "taluk": "Barabani",
+    "place": "Kendua",
+    "pincode": "713343"
+  },
+  {
+    "state": "WEST BENGAL",
+    "district": "Bardhaman",
+    "taluk": "Jamuria",
+    "place": "Mandalpur",
+    "pincode": "713336"
+  },
+  {
+    "state": "WEST BENGAL",
+    "district": "Bardhaman",
+    "taluk": "Barabani",
+    "place": "Mithani",
+    "pincode": "713371"
+  },
+  {
+    "state": "WEST BENGAL",
+    "district": "Bardhaman",
+    "taluk": "Asansol Mc",
+    "place": "Narsinghbandh",
+    "pincode": "713325"
+  }
+]

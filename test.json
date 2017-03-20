@@ -1,0 +1,8 @@
+[
+   { value: 'Andorra', data: 'AD' },
+   // ...
+   { value: 'Zimbabwe', data: 'ZZ' },
+   {
+     value: "TELANGANA",data:'XD',state:'lol'
+   }
+];
