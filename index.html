@@ -16,7 +16,6 @@
     <!-- Custom styles for this template -->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="http://v4-alpha.getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
     <link rel="stylesheet" href="scss/main.css">
   </head>
 
@@ -47,6 +46,7 @@
     </header>
 
     <section id="main-wrapper">
+     <button class="ghost" style="display:none"></button>
       <div class="container">
         <div class="row">
           <div class="col-md-12 mt-5">
@@ -54,16 +54,49 @@
           </div>
         </div>
       </div>
-    <div class="search-wrapper"><input type="text" id="autocomplete" class="form-control "  placeholder="Type Locality or Area">
+    <div class="search-wrapper">
     
+    <input type="text" id="autocomplete" class="form-control" placeholder="Type Locality or Area">
+
     </div>
        <div class="filter">
-    <div class="row">
-        <div class="col-md-12">
-            <p>Lorem ipsum dolor sit amet</p>
+    </div>
+      <div class="info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="info-sec">
+                    <h6>Pin Code:   <span class="info-kek pin"></span>
+                    </h6>
+                </div>
+            </div>
+        </div>
+           <div class="row">
+            <div class="col-md-12">
+                <div class="info-sec">
+                    <h6>District:  <span class="info-kek district"></span>
+                    </h6>
+                </div>
+            </div>
+        </div>
+           <div class="row">
+            <div class="col-md-12">
+                <div class="info-sec">
+                    <h6>State Name: <span class="info-kek state"></span>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="info-map">
+                         <div id="meps"></div>
+                </div>
+            </div>
         </div>
     </div>
     </div>
+
     </section>
     <footer >
     <div class="container-fluid">
@@ -85,20 +118,91 @@
   <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script
-   src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/papaparse.min.js">
-</script>
+    <script>
+       $("document").ready(function(){
+
+      if(window.location.hash){
+          var hashField =window.location.hash.substr(1);
+          var hashExp = new RegExp(hashField, 'i');
+          
+        $.getJSON("pincode.json",function(data){
+         $.each(data,function(key,val){         
+             if(val.place.search(hashExp) != -1){
+                $("#autocomplete").val(hashField);
+                  $("#autocomplete").trigger('change');
+                   $(".ghost").trigger('click');
+                    console.log('click');
+                
+                 
+             }
+          
+         })
+     });
+            
+          
+          
+    
+      }
+
+
+});
+      </script>
+     
+<script type="text/javascript" src="js/global.js"></script>
+
+
+
+        <script>
+        var plat = 0;
+        var plog =  0;
+         var map;
+          var marker;
+        console.log( plat);
+      function initMap() {
+        var uluru = {lat: plat, lng: plog};
+         map = new google.maps.Map(document.getElementById('meps'), {
+          zoom: 10,
+          center: uluru,
+                mapTypeControl: true,
+          mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+            mapTypeIds: ['roadmap', 'terrain']
+          },
+                zoomControl: true,
+          zoomControlOptions: {
+              position: google.maps.ControlPosition.LEFT_CENTER
+          }
+        });
+        marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+
+      function moveBus() {
+    marker.setPosition(new google.maps.LatLng( plat, plog ));
+    map.panTo( new google.maps.LatLng( plat, plog ) );
+
+
+
+}
+    </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5Uqvma9QtninswEeJAHQrTV_N9NWkarI&callback=initMap">
+    </script>
+    <script src="js/bootstrap.js"></script>
 
 <script type="text/javascript">
 $( document ).ready(function() {
 //   $.getJSON("pincode.json",function(data){
 //   console.log(data);
 // });
-    
-    
-$('#autocomplete').keyup(function(){
+
+
+$('#autocomplete').on('input change',function(){
 
 var searchField = $('#autocomplete').val();
 var myExp = new RegExp(searchField, 'i');
@@ -110,12 +214,14 @@ if(searchField === ''){
 var output =`<div class="row">`;
 var count=1;
 $.getJSON('pincode.json', function(data){
-    
 $.each(data, function(key, val){
-if((val.state.search(myExp) != -1) || (val.district.search(myExp) != -1)) {
-console.log(val.place);
-output+=`<div class="col-md-12">`;
-output+=`<p>`+val.state+` `+val.district+` `+val.taluk+` `+val.pincode`</p>`;
+if((val.state.search(myExp) != -1) || (val.district.search(myExp) != -1) || (val.taluk.search(myExp) != -1) || (val.place.search(myExp) != -1) || (val.pincode.search(myExp) != -1) ) {
+console.log(val);
+output+=`<div class="col-md-12 item">`;
+output+=`<p>`+val.state + `,` + val.district+`, `+val.taluk+ `, `+val.place+`, `+val.pincode +`</p>`;
+s=val.state;
+d=val.district;
+p=val.place;
     if(count%2==0){
         output+=`</div><div class="row">`
     }
@@ -125,10 +231,97 @@ output+=`<p>`+val.state+` `+val.district+` `+val.taluk+` `+val.pincode`</p>`;
     output+=`</div>`;
     $('.filter').html(output);
 });
-})
+});
+
+
+
+
   });
 
-
 </script>
+<script>
+      $(".ghost").on('click',function(){
+        
+            var kek=$('#autocomplete').val();
+                    console.log(kek);
+            $('.filter').addClass('hide');
+
+            $('#meps').addClass('visi');
+             $('.info-sec').addClass('visi');
+             $.ajax({
+        url:'https://maps.googleapis.com/maps/api/geocode/json?address='+kek+'&key=AIzaSyD5Uqvma9QtninswEeJAHQrTV_N9NWkarI'
+    }).done(function(loca){
+        /*console.log(loca.results[0]);*/
+                      console.log(loca.results[0].geometry.location);
+                        plat = loca.results[0].geometry.location.lat;
+                plog = loca.results[0].geometry.location.lng;
+        moveBus();
+                 var pin;
+                 pin=loca.results[0].address_components[0].long_name;
+                 var district=d;
+
+                 var state=s;
+                 var place=""+p;
+
+                 $('.pin').html(pin);
+                 $('.district').html(district);
+                 $('.state').html(state);
+                  window.history.pushState("", "","#"+place);
+
+                      });
+      })
+      
+      $('.filter').trigger('click');
+      </script>
+ <script>
+$(".filter").on('click',function(){
+    console.log('hh');
+ function showWinner (){
+    var aTags = document.getElementsByTagName("p");
+    for (var i=0;i<aTags.length;i++){
+        aTags[i].addEventListener("click",function(e){
+    e=e || window.event;
+                var target = e.target || e.srcElement,
+        text = target.textContent || text.innerText;
+        var code = text.match(/\d{6}/);
+        var kek=parseInt(code);
+        $('#autocomplete').val(code);
+                    console.log(kek);
+            $('.filter').addClass('hide');
+
+            $('#meps').addClass('visi');
+             $('.info-sec').addClass('visi');
+             $.ajax({
+        url:'https://maps.googleapis.com/maps/api/geocode/json?address='+kek+'&key=AIzaSyD5Uqvma9QtninswEeJAHQrTV_N9NWkarI'
+    }).done(function(loca){
+        /*console.log(loca.results[0]);*/
+                      console.log(loca.results[0].geometry.location);
+                        plat = loca.results[0].geometry.location.lat;
+                plog = loca.results[0].geometry.location.lng;
+        moveBus();
+                 var pin;
+                 pin=loca.results[0].address_components[0].long_name;
+                 var district=d;
+
+                 var state=s;
+                 var place="#"+p;
+                 $('.pin').html(pin);
+                 $('.district').html(district);
+                 $('.state').html(state);
+                  window.history.pushState("", "",place);
+
+                      });
+
+                                                    },false);
+    }
+}
+    showWinner();
+    $("#autocomplete").on("focus",function(){
+        $('.filter').removeClass('hide');
+        $('#meps').removeClass('visi');
+          $('.info-sec').removeClass('visi');
+    })
+})
+    </script>
   </body>
 </html>

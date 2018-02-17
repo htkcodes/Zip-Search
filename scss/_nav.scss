@@ -9,6 +9,9 @@
 .navbar-brand{
   font-family: $Osw;
   color: $dblue;
+    &:hover{
+        color: $dblue;
+    }
 }
 
   .navbar-nav {
